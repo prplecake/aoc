@@ -54,17 +54,17 @@ func main() {
     fmt.Println("Total good passwords:", good)
     good1 := 0
     for _, a := range passwords {
-        //index := strings.IndexAny(a.Policy, a.Password)+1
-        for i, c := range a.Password {
-            i++
-            if string(c) == a.Policy {
-                if (i == a.Min) && (i == a.Max) {
-                    continue
-                } else {
-                    good1++
-                }
-            }
+        password_good := false
+        test1 := a.Password[a.Min-1:a.Min] == a.Policy
+        test2 := a.Password[a.Max-1:a.Max] == a.Policy
+        if test1 && !test2 {
+            password_good = true
+        } else if !test1 && test2 {
+            password_good = true
+        }
+        if password_good {
+            good1++
         }
     }
-    fmt.Println("Total actually good1 passwords:", good)
+    fmt.Println("Total actually good1 passwords:", good1)
 }
