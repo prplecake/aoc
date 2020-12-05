@@ -28,6 +28,7 @@ func main() {
 		fmt.Println("Scanning error:", err)
 	}
 
+first:
 	for i := 0; i < len(data); i++ {
 		for j := 0; j < len(data); j++ {
 			sum := data[i] + data[j]
@@ -36,7 +37,22 @@ func main() {
 				fmt.Println("Found one!")
 				fmt.Println(data[i], data[j])
 				fmt.Println(data[i] * data[j])
-				return
+				break first
+			}
+		}
+	}
+second:
+	for i := 0; i < len(data); i++ {
+		for j := 0; j < len(data); j++ {
+			for k := 0; k < len(data); k++ {
+				sum := data[i] + data[j] + data[k]
+
+				if sum == 2020 {
+					fmt.Println("Found one!")
+					fmt.Println(data[i], data[j], data[k])
+					fmt.Println(data[i] * data[j] * data[k])
+					break second
+				}
 			}
 		}
 	}
