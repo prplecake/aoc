@@ -1,8 +1,8 @@
 package main
 
 import (
-    "fmt"
     "bufio"
+    "fmt"
     "os"
     "regexp"
     "strconv"
@@ -20,7 +20,7 @@ func main() {
     type password struct {
         Min, Max int
         Password string
-        Policy string
+        Policy   string
     }
 
     var passwords = make([]password, 0)
@@ -37,9 +37,9 @@ func main() {
             fmt.Println("Integer conversion error:", err)
         }
         passwords = append(passwords, password{
-            Min: min,
-            Max: max,
-            Policy: result[3],
+            Min:      min,
+            Max:      max,
+            Policy:   result[3],
             Password: result[4],
         })
 
