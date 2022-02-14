@@ -8,5 +8,5 @@ View the current year's: [2021][2021]
 
 * [2020][2020]
 
-[2020]:https://git.sr.ht/~mjorgensen/aoc/tree/2020
-[2021]:https://git.sr.ht/~mjorgensen/aoc/tree/2021
+[2020]:https://github.com/prplecake/aoc/tree/2020
+[2021]:https://github.com/prplecake/aoc/tree/2021
